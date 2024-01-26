@@ -1,3 +1,7 @@
+body{
+    font-family: 微软雅黑, Arial, sans-serif;
+}
+
 nav {
     background-color: rgb(33, 33, 33); /* 设置背景颜色 */
     color: yellow; /* 设置文字颜色 */
@@ -8,6 +12,7 @@ nav {
     height: 40px;
     display: flex;
     align-items: center; /* 垂直居左对齐内部元素 */
+
 }
 
 nav img{
@@ -32,4 +37,13 @@ a {
     color: white; /* 设置链接文字颜色 */
     font-size: larger;
     padding: 10px 30px; /* 设置链接内边距 */
+}
+
+p.nav{
+    margin-top: 45px; /* 设置顶部外边距 */
+
+}
+
+p {
+    margin: 5px; /* 设置外边距 */
 }
