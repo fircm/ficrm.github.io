@@ -9,14 +9,13 @@ nav {
     position: fixed; /* 使用fixed定位，使导航栏固定在屏幕顶部 */
     top: 0; /* 将导航栏顶部与屏幕顶部对齐 */
     left: 0; /* 将导航栏左侧与屏幕左侧对齐 */
-    height: 40px;
+    height: 60px;
     display: flex;
     align-items: center; /* 垂直居左对齐内部元素 */
-
 }
 
 nav img{
-    width: 40px;
+    width: 60px;
     height: auto;
     position: absolute;
     top: 0;
@@ -29,19 +28,31 @@ ul {
 
 li {
     display: inline; /* 横向排列列表项 */
-    margin-right: 20px; /* 设置列表项之间的间距 */
+}
+
+a.img {
+    text-decoration: white; /* 移除链接下划线 */
+    color: white; /* 设置链接文字颜色 */
+    font-size: 150%;
+    margin-left: 80px;
+    padding: 14.5px 30px; /* 设置链接内边距 */
 }
 
 a {
     text-decoration: none; /* 移除链接下划线 */
     color: white; /* 设置链接文字颜色 */
-    font-size: larger;
-    padding: 10px 30px; /* 设置链接内边距 */
+    font-size: 150%;
+    padding: 14.5px 30px; /* 设置链接内边距 */
 }
 
-p.nav{
-    margin-top: 45px; /* 设置顶部外边距 */
+a:active{
+    background-color: cornflowerblue;
+}
 
+
+p.nav {
+    margin-top: 65px; /* 设置顶部外边距 */
+    font-size: 110%;
 }
 
 p {
