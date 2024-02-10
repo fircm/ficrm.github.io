@@ -7,14 +7,37 @@
     <link rel="stylesheet" type="text/css" href="html.css">
 </head>
 <body>
-<nav>
+<nav id="top">
     <ul>
         <li><img src="LOGO.png" alt="请刷新"></li>
         <li><a class="img" href="https://fircm.github.io/main/">主页</a></li>
         <li><a href="https://fircm.github.io/memory">回忆录</a></li>
     </ul>
 </nav>
-<p class="nav">    这就是Fircm的第一个网页了……</p>
-<p>    期待我的更新吧！</p>
+<p class="nav">这就是Fircm的第一个网页了……</p>
+<p>期待我的更新吧！</p>
 </body>
 </html>
+<script>
+    let topNav = document.getElementById('top');
+    let opa = 1;
+    window.addEventListener('scroll', function(){
+        if (window.scrollY === 0) {
+            let count1 = setInterval(function(){
+                opa += 0.02;
+                topNav.style.opacity = opa;
+                if (opa >= 1) {
+                    clearInterval(count1);
+                }
+            }, 10);
+        }else{
+            let count2 = setInterval(function(){
+                opa -= 0.02;
+                topNav.style.opacity = opa;
+                if (opa <= 0.02) {
+                    clearInterval(count2);
+                }
+            }, 10);
+        }
+    })
+</script>
