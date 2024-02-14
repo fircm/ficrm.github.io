@@ -43,64 +43,68 @@
     })
 
 
-        function DateMinus(startDate, endDate) {
-            let Y = endDate.getFullYear() - startDate.getFullYear();
-            let M = endDate.getMonth() - startDate.getMonth();
-            if (months < 0) {
-                Y--;
-                M += 12;
-            }
-            let D = endDate.getDate() - startDate.getDate();
-            if (D < 0) {
-                M--;
-                if (M < 0) {
-                    Y--;
-                    M += 12;
-                }
-                D += new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0).getDate();
-            }
+    function DateMinus(startDate, endDate) {
+         let Y = endDate.getFullYear() - startDate.getFullYear();
+         let M = endDate.getMonth() - startDate.getMonth();
+         if (months < 0) {
+              Y--;
+              M += 12;
+         }
+         let D = endDate.getDate() - startDate.getDate();
+         if (D < 0) {
+              M--;
+              if (M < 0) {
+                  Y--;
+                  M += 12;
+              }
+              D += new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0).getDate();
+         }
             
-            let H = endDate.getHours() - startDate.getHours();
-            if (H < 0) {
+         let H = endDate.getHours() - startDate.getHours();
+             if (H < 0) {
                 D--;
                 H += 24;
-            }
-            let Mi = endDate.getMinutes() - startDate.getMinutes();
-            if (Mi < 0) {
+             }
+         let Mi = endDate.getMinutes() - startDate.getMinutes();
+             if (Mi < 0) {
                 H--;
-                if (H < 0) {
+                 if (H < 0) {
                     D--;
                     H += 24;
-                }
-                Mi += 60;
-            }
-            let S = endDate.getSeconds() - startDate.getSeconds();
-            if (S < 0) {
-                Mi--;
-                if (Mi < 0) {
-                    H--;
-                    if (H < 0) {
-                        D--;
-                        H += 24;
-                    }
-                    Mi += 60;
-                }
-                S += 60;
-            }
+                 }
+             Mi += 60;
+             }
+         let S = endDate.getSeconds() - startDate.getSeconds();
+             if (S < 0) {
+                 Mi--;
+                 if (Mi < 0) {
+                     H--;
+                     if (H < 0) {
+                         D--;
+                         H += 24;
+                     }
+                     Mi += 60;
+                 }
+                 S += 60;
+             }
 
-            let result = [];
-            if (Y > 0) result.push(Y + "年");
-            if (M > 0) result.push(M + "月");
-            if (D > 0) result.push(D + "日");
-            if (H > 0) result.push(H + "小时");
-            if (Mi > 0) result.push(Mi + "分钟");
-            if (S > 0) result.push(S + "秒");
+        let result = [];
+        if (Y > 0) result.push(Y + "年");
+        if (M > 0) result.push(M + "月");
+        if (D > 0) result.push(D + "日");
+        if (H > 0) result.push(H + "小时");
+        if (Mi > 0) result.push(Mi + "分钟");
+        if (S > 0) result.push(S + "秒");
 
-            return result.join("");
-        }
+        return result.join("");
+    }
 
-        let dateOut = document.getElementById('date');
+    let dateOut = document.getElementById('date');
+    function Circle{
         setTimeout(function() {
             dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date());
         }, 100);
+        Circle()
+    }
+    Circle()
 </script>
