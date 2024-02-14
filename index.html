@@ -103,8 +103,28 @@
     function Circle() {
         setTimeout(function() {
             dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date());
-        }, 100);
+        }, 1000);
         Circle();
     }
+      async function wait(TorF) {
+      while (true) {
+        if (await TorF()) {
+            return;
+        }
+        await new Promise(resolve => setTimeout(resolve, 10));
+      }
+    }
+
+    async function checkCondition() {
+        
+        return new Promise(resolve => {
+            setTimeout(() => {
+                const conditionMet = Math.random() > 0.5; // 假设条件是一个随机数大于0.5
+                resolve(conditionMet);
+            }, 1000);
+        });
+    }
+wait(check);
+
     Circle();
 </script>
