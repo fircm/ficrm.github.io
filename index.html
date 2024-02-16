@@ -100,17 +100,14 @@
     }
     
     var dateOut = document.getElementById('date');
-    async function wait() {
-        const Now = new Date().getSeconds();
-        while (true) {
-            if (new Date().getSeconds() != Now) {
-                return;
-            }else{
-                setTimeout(function(){}, 100));
-            };
+    const Now = new Date().getSeconds();
+    while (true) {
+        if (new Date().getSeconds() != Now) {
+            break;
+        }else{
+            setTimeout(function(){}, 100));
+        };
         }
     }
-    
-    await wait();
     setInterval(function(){dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date())}, 1000)
 </script>
