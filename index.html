@@ -43,71 +43,44 @@
     })
 
 
-    function DateMinus(startDate, endDate) {
-        var Y = endDate.getFullYear() - startDate.getFullYear();
-        var M = endDate.getMonth() - startDate.getMonth();
+function DateMinus(startDate, endDate) {
+    var Y = endDate.getFullYear() - startDate.getFullYear();
+    var M = endDate.getMonth() - startDate.getMonth();
+    if (M < 0) {
+        Y--;
+        M += 12;
+    }
+    var D = endDate.getDate() - startDate.getDate();
+    if (D < 0) {
+        M--;
         if (M < 0) {
             Y--;
             M += 12;
         }
-        var D = endDate.getDate() - startDate.getDate();
-        if (D < 0) {
-            M--;
-            if (M < 0) {
-                Y--;
-                M += 12;
-            }
-            D += new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0).getDate();
-        }
-
-        var H = endDate.getHours() - startDate.getHours();
-        if (H < 0) {
-            D--;
-            H += 24;
-        }
-        var Mi = endDate.getMinutes() - startDate.getMinutes();
-        if (Mi < 0) {
-            H--;
-            if (H < 0) {
-                D--;
-                H += 24;
-            }
-            Mi += 60;
-        }
-        var S = endDate.getSeconds() - startDate.getSeconds();
-        if (S < 0) {
-            Mi--;
-            if (Mi < 0) {
-                H--;
-                if (H < 0) {
-                    D--;
-                    H += 24;
-                }
-                Mi += 60;
-            }
-            S += 60;
-        }
-
-        var result = [];
-        if (Y > 0) result.push(Y + "年");
-        if (M > 0) result.push(M + "月");
-        if (D > 0) result.push(D + "日");
-        if (H > 0) result.push(H + "小时");
-        if (Mi > 0) result.push(Mi + "分钟");
-        if (S > 0) result.push(S + "秒");
-
-        return result.join("");
+        D += new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0).getDate();
+        if (D === 0) D = new Date(endDate.getFullYear(), endDate.getMonth(), 0).getDate(); // Handle the boundary case
     }
+
+    var H = Math.abs(endDate.getHours() - startDate.getHours());
+    var Mi = Math.abs(endDate.getMinutes() - startDate.getMinutes());
+    var S = Math.abs(endDate.getSeconds() - startDate.getSeconds());
+
+    var result = [];
+    if (Y > 0) result.push(Y + "年");
+    if (M > 0) result.push(M + "月");
+    if (D > 0) result.push(D + "日");
+    if (H > 0) result.push(H + "小时");
+    if (Mi > 0) result.push(Mi + "分钟");
+    if (S > 0) result.push(S + "秒");
+
+    return result.join("");
+}
+
     
     var dateOut = document.getElementById('date');
     const Now = new Date().getSeconds();
-    while (true) {
+    setTimeout(function(){
         if (new Date().getSeconds() != Now) {
-            break;
-        }else{
-            setTimeout(function(){}, 100));
-        };
-        }
-    }
-    setInterval(function(){dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date())}, 1000)
+            setInterval(function(){dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date())}, 1000)}
+    }, 100));
 </script>
