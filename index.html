@@ -98,33 +98,26 @@
 
         return result.join("");
     }
-
+    
     var dateOut = document.getElementById('date');
-    function Circle() {
-        setTimeout(function() {
-            dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date());
-        }, 1000);
-        Circle();
-    }
-    async function wait(TorF) {
-    while (true) {
-        if (await TorF()) {
-            return;
-        }
+    var Now = new Date().getSeconds();
+
+    async function wait() {
+        while (true) {
+            const current = new Date().getSeconds();
+            if (current != Now) {
+                Now = current;
+                break;
+            }
         await new Promise(resolve => setTimeout(resolve, 10));
-      }
+        }
     }
 
-    async function checkCondition() {
-        
-        return new Promise(resolve => {
-            setTimeout(() => {
-                const conditionMet = Math.random() > 0.5; // 假设条件是一个随机数大于0.5
-                resolve(conditionMet);
-            }, 1000);
-        });
+    async function Circle() {
+        await wait();
+        dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date());
+        setInterval(Circle, 1000);
     }
-wait(check);
 
     Circle();
 </script>
