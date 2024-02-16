@@ -106,14 +106,14 @@
             if (new Date().getSeconds() != Now) {
                 break;
             }
-        await new Promise(resolve => setTimeout(resolve, 10));
+        await new Promise(resolve => setTimeout(resolve, 100));
         }
     }
 
     async function Circle() {
         await wait();
         dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date());
-        setInterval(Circle, 100);
+        setInterval(Circle, 500);
     }
 
     Circle();
