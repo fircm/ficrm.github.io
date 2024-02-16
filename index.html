@@ -104,9 +104,9 @@
         const Now = new Date().getSeconds();
         while (true) {
             if (new Date().getSeconds() != Now) {
-                break;
+                return;
             }else{
-                await new Promise(resolve => setTimeout(resolve, 100));
+                setTimeout(function(){}, 100));
             };
         }
     }
