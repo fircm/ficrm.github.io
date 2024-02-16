@@ -100,13 +100,10 @@
     }
     
     var dateOut = document.getElementById('date');
-    var Now = new Date().getSeconds();
-
     async function wait() {
         while (true) {
-            const current = new Date().getSeconds();
-            if (current != Now) {
-                Now = current;
+            const Now = new Date().getSeconds();
+            if (new Date().getSeconds() != Now) {
                 break;
             }
         await new Promise(resolve => setTimeout(resolve, 10));
@@ -116,7 +113,7 @@
     async function Circle() {
         await wait();
         dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date());
-        setInterval(Circle, 1000);
+        setInterval(Circle, 100);
     }
 
     Circle();
