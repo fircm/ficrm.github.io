@@ -78,9 +78,9 @@ function DateMinus(startDate, endDate) {
 
     
     var dateOut = document.getElementById('date');
-    const Now = new Date().getSeconds();
-    setTimeout(function(){
+    var Now = new Date().getSeconds();
+    while (true){
         if (new Date().getSeconds() != Now) {
-            setInterval(function(){dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date())}, 1000)}
-    }, 100));
+            break}};
+    setTimeout(function(){dateOut.textContent = DateMinus(new Date(2008, 0, 27, 15, 50, 24), new Date())}, 1000)
 </script>
