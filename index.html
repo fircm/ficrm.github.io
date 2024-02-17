@@ -49,7 +49,7 @@
         let days = end.getDate() - start.getDate();
 
         if (days < 0) {
-            days += new Date(year, month+1, 0).getDate();
+            days += new Date(end.getFullYear(), end.getMonth() + 1, 0).getDate();
             months--;
         }
         if (months < 0) {
