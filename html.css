@@ -1,9 +1,15 @@
+@font-face{
+    font-family: '方正粗黑宋简体';
+    src: url('方正粗黑宋简体.ttf');
+    font-weight: normal;
+}
+
 body{
-    font-family: Helvetica Neue, 方正粗黑宋简体, sans-serif;
+    font-family: '方正粗黑宋简体';
     background-color: lightgrey;
 }
 
-nav{
+nav {
     background-color: rgb(33, 33, 33); /* 设置背景颜色 */
     color: yellow; /* 设置文字颜色 */
     width: 100%; /* 设置导航栏宽度为100% */
@@ -22,16 +28,16 @@ nav img{
     top: 0;
 }
 
-ul{
+ul {
     list-style-type: none; /* 移除列表样式 */
     padding: 0;
 }
 
-li{
+li {
     display: inline; /* 横向排列列表项 */
 }
 
-a.img{
+a.img {
     text-decoration: white; /* 移除链接下划线 */
     color: white; /* 设置链接文字颜色 */
     font-size: 150%;
@@ -39,7 +45,7 @@ a.img{
     padding: 14.5px 30px; /* 设置链接内边距 */
 }
 
-a{
+a {
     text-decoration: none; /* 移除链接下划线 */
     color: white; /* 设置链接文字颜色 */
     font-size: 150%;
@@ -51,15 +57,12 @@ a:active{
 }
 
 
-p.nav{
+p.nav {
     margin-top: 65px; /* 设置顶部外边距 */
     font-size: 110%;
 }
 
-p{
+p {
     margin: 5px; /* 设置外边距 */
-}
-
-#date{
-    color: darkgreen;
+    
 }
