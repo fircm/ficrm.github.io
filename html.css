@@ -64,5 +64,8 @@ p.nav {
 
 p {
     margin: 5px; /* 设置外边距 */
-    
+}
+
+span{
+    color: cornflowerblue;
 }
