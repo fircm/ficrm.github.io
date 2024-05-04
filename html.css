@@ -1,17 +1,18 @@
 @font-face{
     font-family: '方正粗黑宋简体';
-    src: '方正粗黑宋简体.ttf';
+    src: url('方正粗黑宋简体.ttf');
     font-weight: normal;
 }
 
 body{
     font-family: '方正粗黑宋简体';
-    background-color: lightgrey;
+    background-color: black;
 }
 
 nav {
-    background-color: rgb(33, 33, 33); /* 设置背景颜色 */
-    color: yellow; /* 设置文字颜色 */
+    background-color: black; /* 设置背景颜色 */
+    border-bottom: 1px solid white;/* 设置底部边框 */
+    color: orange; /* 设置文字颜色 */
     width: 100%; /* 设置导航栏宽度为100% */
     position: fixed; /* 使用fixed定位，使导航栏固定在屏幕顶部 */
     top: 0; /* 将导航栏顶部与屏幕顶部对齐 */
@@ -26,6 +27,7 @@ nav img{
     height: auto;
     position: absolute;
     top: 0;
+    left: 5px;
 }
 
 ul {
@@ -53,19 +55,21 @@ a {
 }
 
 a:active{
-    background-color: cornflowerblue;
+    background-color: #009fff;
 }
 
 
 p.nav {
-    margin-top: 65px; /* 设置顶部外边距 */
+    margin-top: 80px; /* 设置顶部外边距 */
     font-size: 110%;
+    color: white;
 }
 
 p {
-    margin: 5px; /* 设置外边距 */
+    margin: 10px; /* 设置外边距 */
+    color: white;
 }
 
 span{
-    color: cornflowerblue;
+    color: #009fff;
 }
