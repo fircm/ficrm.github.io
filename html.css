@@ -51,9 +51,9 @@ a.img {
 }
 
 a.text{
-	font-size: 100%;
-	padding: 0 0;
-	text-decoration: underline;
+    font-size: 100%;
+    padding: 0 0;
+    text-decoration: underline;
 }
 
 a:active{
