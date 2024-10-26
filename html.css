@@ -39,19 +39,21 @@ li {
     display: inline; /* 横向排列列表项 */
 }
 
-a.img {
-    text-decoration: white; /* 移除链接下划线 */
-    color: white; /* 设置链接文字颜色 */
-    font-size: 150%;
-    margin-left: 80px;
-    padding: 14.5px 30px; /* 设置链接内边距 */
-}
-
 a {
     text-decoration: none; /* 移除链接下划线 */
     color: white; /* 设置链接文字颜色 */
     font-size: 150%;
     padding: 14.5px 30px; /* 设置链接内边距 */
+}
+
+a.img {
+    margin-left: 80px;
+}
+
+a.text{
+	font-size: 100%;
+	padding: 0 0;
+	text-decoration: underline;
 }
 
 a:active{
